@@ -13,71 +13,81 @@
             margin: 0;
             padding: 0;
         }
-        .logo {
-            position: absolute;
-            left: 50%;
-            top: 10em;
-            width: 256px;
-            height: 256px;
-            margin-left: -128px;
-            margin-top: -128px;
-            z-index: 2;
+        
+        header.hero {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-image: url('bg.jpg');
+            background-position: center center;
+            background-size: cover;
+            overflow: hidden;
         }
-        nav {
+        
+        nav.main {
             position: absolute;
             float: left;
             width: 100%;
             height: 6em;
             top: 10em;
             margin-top: -3em; 
-            z-index: 1;
         }
-            nav .spacer {
+            nav.main .spacer {
                 float: left;
                 height: 100%;
                 width: 30%;
                 background-color: rgba(255,255,255,0.85);
             }
-                nav ul {
-                    margin: 0;
-                    padding: 0;
-                    display: block;
-                    width: 100%;
+            nav.main .logo {
+                position: absolute;
+                left: 50%;
+                top: 3em;
+                width: 256px;
+                height: 256px;
+                margin-left: -128px;
+                margin-top: -128px;
+            }
+            nav.main ul {
+                margin: 0;
+                padding: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                list-style: none;
+            }
+                nav.main ul li {
+                    float: left;
+                    padding: 0 1em;
+                    width: 17.5%;
                     height: 100%;
-                    list-style: none;
+                    text-align: center;
+                    color: #019875;
+                    background-color: rgba(255,255,255,0.85);
+                    transition: all 0.33s ease-in-out;
                 }
-                    nav ul li {
-                        float: left;
-                        padding: 0 1em;
-                        width: 17.5%;
+                nav.main ul li:hover {
+                    height: 110%;
+                    margin-top: -0.33em;
+                    background-color: rgba(255,255,255,0.95);
+                    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+                }
+                    nav.main ul li:hover a {
+                        margin-top: 1.7em;
+                        font-size: 1.15em;
+                    }
+                    nav.main ul li a {
+                        margin-top: 1.8em;
+                        position: relative;
+                        display: block;
+                        transition: all 0.25s ease-in-out;
                         height: 100%;
-                        text-align: center;
-                        color: #019875;
-                        background-color: rgba(255,255,255,0.85);
-                        transition: all 0.33s ease-in-out;
+                        color: inherit;
+                        font-family: 'Open Sans';
+                        font-weight: 600;
+                        text-decoration: none; 
                     }
-                    nav ul li:hover {
-                        height: 110%;
-                        margin-top: -0.33em;
-                        background-color: rgba(255,255,255,0.95);
-                        box-shadow: 0 0 25px rgba(0,0,0,0.25);
-                    }
-                        nav ul li:hover a {
-                            margin-top: 1.7em;
-                            font-size: 1.15em;
-                        }
-                        nav ul li a {
-                            margin-top: 1.8em;
-                            position: relative;
-                            display: block;
-                            transition: all 0.25s ease-in-out;
-                            height: 100%;
-                            color: inherit;
-                            font-family: 'Open Sans';
-                            font-weight: 600;
-                            text-decoration: none; 
-                        }
-                        nav ul li a small {
+                        nav.main ul li a small {
                             position: absolute;
                             left: 0;
                             right: 0;
@@ -88,16 +98,7 @@
                             font-style: italic;
                             font-weight: 300;
                         }
-        .bg {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            background-image: url('bg.jpg');
-            background-position: center center;
-            background-size: cover;
-            overflow: hidden;
-        }
+        
         .copy {
             position: relative;
             height: 100%;
@@ -108,9 +109,11 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <img class="logo" src="logo.svg" alt="">
     
-    <nav>
+    
+    <header class="hero"></header>
+    
+    <nav class="main">
         <ul>
             <li>
                 <a href="">About<br>
@@ -124,6 +127,7 @@
                 </a>
             </li>
             
+            <img class="logo" src="logo.svg" alt="">
             <div class="spacer"></div>
             
             <li>
@@ -139,8 +143,6 @@
             </li>
         </ul>
     </nav>
-    
-    <div class="bg"></div>
     
     <div class="copy"></div>
 </body>
