@@ -41,12 +41,22 @@
             }
             nav.main .logo {
                 position: absolute;
+                cursor: pointer;
                 left: 50%;
                 top: 3em;
                 width: 256px;
                 height: 256px;
                 margin-left: -128px;
                 margin-top: -128px;
+                border-radius: 50%;
+                transition: all 0.33s ease-in-out;
+            }
+            nav.main .logo:hover {
+                width: 270px;
+                height: 270px;
+                margin-left: -135px;
+                margin-top: -135px;
+                box-shadow: 0 0 25px rgba(0,0,0,0.50);
             }
             nav.main ul {
                 margin: 0;
