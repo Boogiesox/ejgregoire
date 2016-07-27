@@ -13,6 +13,15 @@ header.hero {
     background-size: cover;
     overflow: hidden;
 }
+    header.hero .typist {
+        font-size: 3em;
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 60%;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(0,0,0,1);
+    }
 
 nav.main {
     position: absolute;
@@ -57,28 +66,25 @@ nav.main {
     }
         nav.main ul li {
             float: left;
+            display: table;
             padding: 0 1em;
             width: 17.5%;
             height: 100%;
             text-align: center;
             color: #019875;
             background-color: rgba(255,255,255,0.85);
-            transition: all 0.20s ease-in-out;
+            transition: all 0.5s cubic-bezier(0,.62,.5,1);
         }
         nav.main ul li:hover {
-            height: 110%;
-            margin-top: -0.33em;
+            height: 120%;
+            margin-top: -0.66em;
             background-color: rgba(255,255,255,0.95);
             box-shadow: 0 0 25px rgba(0,0,0,0.25);
         }
-            nav.main ul li:hover a {
-                margin-top: 1.7em;
-                font-size: 1.15em;
-            }
             nav.main ul li a {
-                margin-top: 1.8em;
                 position: relative;
-                display: block;
+                display: table-cell;
+                vertical-align: middle;
                 transition: all 0.20s ease-in-out;
                 height: 100%;
                 color: inherit;

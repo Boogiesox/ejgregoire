@@ -580,3 +580,9 @@ h6 {
 .left {
     float: left;
 }
+.text-center {
+    text-align: center;
+}
+.text-weight-light {
+    font-weight: 200;
+}
