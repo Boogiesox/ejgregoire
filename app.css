@@ -52,6 +52,7 @@ header.hero {
         top: 60%;
         color: #fff;
         text-shadow: 0 0 20px rgba(0,0,0,1);
+        
     }
 
 nav.main {
@@ -174,10 +175,10 @@ form.contact-me textarea {
     font-weight: 300;
     width: 100%;
     outline: none;
-    font-size: 2em;
+    font-size: 1.2em;
     margin-bottom: 0.5em;
-    border-bottom: 1px solid transparent;
-    padding: 0.33rem 0.66rem;
+    border-bottom: 2px solid transparent;
+    padding: 1rem;
     background: rgba(255,255,255,0.10);
     color: rgba(255,255,255,0.80);
     transition: border 1s cubic-bezier(0,.62,.5,1);
@@ -192,27 +193,25 @@ form.contact-me input[type="reset"] {
     background: rgba(255,255,255,0.10);
     color: rgba(255,255,255,0.80);
     transition: all 1s cubic-bezier(0,.62,.5,1);
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
 }
     form.contact-me input[type="submit"]:hover,
     form.contact-me input[type="reset"]:hover {
-        border-bottom: 1px solid rgba(255,255,255,0.80);
+        border-bottom: 2px solid rgba(255,255,255,0.80);
     }
     form.contact-me input:focus {
         border: none;
-        border-bottom: 1px solid rgba(255,255,255,0.80);
+        border-bottom: 2px solid rgba(255,255,255,0.80);
     }
     form.contact-me textarea {
-        font-size: 1.2em;
         border: none;
-        padding: 0.33rem 0.66rem;
         resize: vertical;
         max-height: 15em;
         height: 10em;
-        border: 1px solid transparent;
+        border: 2px solid transparent;
     }
         form.contact-me textarea:focus {
-            border-bottom: 1px solid rgba(255,255,255,0.80);
+            border-bottom: 2px solid rgba(255,255,255,0.80);
         }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(255,255,255,0.40);
