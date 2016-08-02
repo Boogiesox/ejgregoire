@@ -141,7 +141,12 @@ nav.main {
 section.contact {
     padding: 2em 0;
     background-color: #019875;
+    color: rgba(255,255,255,0.80);
 }
+    section.contact p {
+        font-size: 1.2em;
+    }
+
 form.contact-me {
     width: 100%;
     margin: 0;
@@ -152,7 +157,10 @@ form.contact-me {
 form.contact-me fieldset {
     border: none;
 }
-form.contact-me input,
+form.contact-me input[type="text"],
+form.contact-me input[type="tel"],
+form.contact-me input[type="email"],
+form.contact-me input[type="number"],
 form.contact-me textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -174,6 +182,22 @@ form.contact-me textarea {
     color: rgba(255,255,255,0.80);
     transition: border 1s cubic-bezier(0,.62,.5,1);
 }
+form.contact-me input[type="submit"],
+form.contact-me input[type="reset"] {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2em;
+    background: rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.80);
+    transition: all 1s cubic-bezier(0,.62,.5,1);
+    border-bottom: 1px solid transparent;
+}
+    form.contact-me input[type="submit"]:hover,
+    form.contact-me input[type="reset"]:hover {
+        border-bottom: 1px solid rgba(255,255,255,0.80);
+    }
     form.contact-me input:focus {
         border: none;
         border-bottom: 1px solid rgba(255,255,255,0.80);
@@ -185,16 +209,11 @@ form.contact-me textarea {
         resize: vertical;
         max-height: 15em;
         height: 10em;
-        transition: background 1s cubic-bezier(0,.62,.5,1);
+        border: 1px solid transparent;
     }
         form.contact-me textarea:focus {
-            background: rgba(255,255,255,0.20);
+            border-bottom: 1px solid rgba(255,255,255,0.80);
         }
-    form.contact-me input[type=submit],
-    form.contact-me input[type=reset] {
-        width: 100%;
-        background: 
-    }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(255,255,255,0.40);
 }
