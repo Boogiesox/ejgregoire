@@ -47,12 +47,9 @@ header.hero {
     header.hero .typist {
         font-size: 3em;
         position: absolute;
-        display: block;
-        width: 100%;
         top: 60%;
         color: #fff;
         text-shadow: 0 0 20px rgba(0,0,0,1);
-        
     }
 
 nav.main {

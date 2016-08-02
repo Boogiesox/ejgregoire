@@ -1,26 +1,28 @@
 function Typist(config) {
   var index = 0,
-      element = document.querySelector(config.element),
-      msg = element.innerHTML;
-      
-  clearText(element);
+      elements = document.querySelectorAll(config.element),
+      messageIndex = Math.floor(Math.random() * (elements.length));
+      msg = elements[messageIndex].innerHTML;
+  
+  prepElement(elements[messageIndex]);
   setTimeout(pressChars, config.delay);
 
   function pressChars() {
     var random = Math.random() * 200,
-        msgArr = msg.split('');
+        msgArr = msg.split(''); 
 
     setTimeout(function() {
-      element.innerHTML += msgArr[index];
+      elements[messageIndex].innerHTML += msgArr[index];
 
-      if(index < msg.length -1) {
+      if(index < msg.length - 1) {
         index++;
         pressChars();
       }
     }, random);
   }
 
-  function clearText() {
+  function prepElement(element) {
     element.innerHTML = '';
+    element.style.display = config.display || 'inline-block';
   }
 }
