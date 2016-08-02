@@ -44,13 +44,19 @@ header.hero {
     background-size: cover;
     overflow: hidden;
 }
-    header.hero .typist {
-        font-size: 3em;
-        position: absolute;
+    header.hero .typist-container {
+        position: relative;
         top: 60%;
-        color: #fff;
-        text-shadow: 0 0 20px rgba(0,0,0,1);
+        text-align: center;
     }
+        header.hero .typist {
+            font-size: 32px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0,0,0,1);
+        }
 
 nav.main {
     position: absolute;
