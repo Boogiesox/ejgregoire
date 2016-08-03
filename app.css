@@ -29,6 +29,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url(sayagata.png); /* http://subtlepatterns.com/japanese-sayagata/ */
 }
 .preload * {
   -webkit-transition: none !important;
