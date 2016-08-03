@@ -428,7 +428,7 @@ td {
 p {
   font-size: inherit;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.66rem;
   text-rendering: optimizeLegibility; }
 
 em,
@@ -845,8 +845,8 @@ kbd {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem; }
+  padding-left: 1.66rem;
+  padding-right: 1.66rem; }
   .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
@@ -859,9 +859,7 @@ kbd {
     padding-right: 0;
     margin-left: 0;
     margin-right: 0; }
-.column.no-padding, .columns.no-padding {
-  padding: 0;
-}
+    
 .small-1 {
   width: 8.33333%; }
 
@@ -2196,7 +2194,9 @@ kbd {
 .long-delay {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
-
+.no-padding {
+  padding: 0;
+}
 .no-padding-left {
   padding-left: 0;
 }
