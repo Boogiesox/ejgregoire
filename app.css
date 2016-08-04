@@ -30,6 +30,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(sayagata.png); /* http://subtlepatterns.com/japanese-sayagata/ */
+    background-attachment: fixed;
 }
 .preload * {
   -webkit-transition: none !important;
@@ -160,10 +161,21 @@ nav.main {
                     font-style: italic;
                     font-weight: 300;
                 }
+                
+/* TESTIMONIALS SECTION STYLES */
+section.testimonials {
+    padding: 4em 0;
+}
+    section.testimonials .testimonial {
+        height: 300px;
+        background: #019875;
+        box-shadow: 0 0 25px rgba(0,0,0,0.25);
+        padding: 1em;
+    }
 
 /* CONTACT SECTION STYLES */
 section.contact {
-    MARGIN-TOP: 500px; /* REMOVE THIS EVENTUALLY */
+    margin-top: 156px;
     background-color: #019875;
     color: #fff;
     padding: 6em 0 3em 0;
