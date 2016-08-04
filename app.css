@@ -172,6 +172,9 @@ section.contact {
         color: inherit;
         font-size: 1.2em;
     }
+    section.contact .tin-can {
+        margin-top: 2em;
+    }
     section.contact .marker {
         position: absolute;
         margin: 0 auto;
