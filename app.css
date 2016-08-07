@@ -121,7 +121,7 @@ nav.main {
         nav.main ul li {
             float: left;
             display: table;
-            padding: 0 1em;
+            padding: 0;
             width: 17.5%;
             height: 100%;
             text-align: center;
