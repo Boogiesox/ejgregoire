@@ -44,7 +44,7 @@ function ExcerptRandomizer(config) {
         var random = Math.floor(Math.random() * (excerpts.length)),
             randomExcerpt = excerpts[random];
 
-        (random === previousExcerptIndex && excerpts.length > 1)
+        (random === previousExcerptIndex && excerpts.length >= 1)
             ? getAndDisplayRandomExcerpt()
             : render(randomExcerpt, excerptTarget);
 
@@ -53,15 +53,14 @@ function ExcerptRandomizer(config) {
     
     function clearHighlights() {
         testimonials.forEach(function(testimonial) {
-            var testimonialLink = testimonial.querySelector(config.testimonials.linkSelector) || throwError(ERRORS.TESTIMONIALS_LINK);
-            testimonialLink.classList.remove(config.testimonials.highlightClass);
+            testimonial.classList.remove(config.testimonials.highlightClass);
         });
     }
     
     function render(excerpt, el) {
         if(config.testimonials.highlightClass) {
             clearHighlights();
-            excerpt.closest(config.testimonials.elementSelector).querySelector(config.testimonials.linkSelector).classList.add(config.testimonials.highlightClass);
+            excerpt.closest(config.testimonials.elementSelector).classList.add(config.testimonials.highlightClass);
         }
 
         el.innerHTML = '"' + excerpt.innerHTML + '"';
