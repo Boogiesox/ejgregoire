@@ -12,4 +12,18 @@
         delay: 1000,
         display: 'inline'
     });
+    
+    // Instantiate new excerptRandomizer.js control
+    new ExcerptRandomizer({
+        "interval": 1000,
+        "excerpts": {
+            "attribute": "excerpt",
+            "targetSelector": ".testimonial-excerpt"
+        },
+        "testimonials": {
+            "elementSelector": ".testimonial",
+            "linkSelector": ".testimonial-link",
+            "highlightClass": "highlight"
+        }
+    });
 })();

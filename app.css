@@ -164,14 +164,36 @@ nav.main {
                 
 /* TESTIMONIALS SECTION STYLES */
 section.testimonials {
-    padding: 10em 0 4em 0;
+    padding: 0em 0 4em 0;
 }
-    section.testimonials .testimonial {
-        height: 300px;
-        background: rgba(255,255,255,0.75);
-        box-shadow: 0 0 25px rgba(0,0,0,0.25);
-        padding: 1em;
+    section .testimonial img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        transition: filter 0.5s cubic-bezier(0,.62,.5,1);
+        -webkit-transition: -webkit-filter 0.5s cubic-bezier(0,.62,.5,1);
+        cursor: pointer;
     }
+    section .testimonial img:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+    }
+    section .hightlight img {
+        background: red;
+    }
+    section .testimonial-body {
+        background: #fff;
+        margin-top: 2em;
+        padding: 1em;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+    section .testimonial-excerpt {
+        padding: 1em 0;
+        text-align: center;
+        font-size: 3em;
+    }
+    
 
 /* CONTACT SECTION STYLES */
 section.contact {
