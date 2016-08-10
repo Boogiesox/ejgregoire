@@ -5,7 +5,6 @@
     * @param {string} config.excerpts.attribute - The attribute that is added to elements to mark excerpts.
     * @param {string} config.excerpts.targetSelector - The selector pattern for where to display the excerpts.
     * @param {string} config.testimonials.elementSelector - The selector pattern for testimonial elements.
-    * @param {string} config.testimonials.linkSelector - The selector pattern for testimonial links.
     * @param {string} config.testimonials.highlightClass - The class name to append to the testimonial-associated-with-the-excerpt's link.
 */
 function ExcerptRandomizer(config) {
@@ -16,7 +15,6 @@ function ExcerptRandomizer(config) {
         "EXCERPT_ATTRIBUTE": "config.excerpts.attribute may be invalid or undefined",
         "INTERVAL_NAN": "config.interval must be an integer, 0, or not defined",
         "TESTIMONIALS_ELEMENT": "config.testimonials.elementSelector may be invalid or undefined",
-        "TESTIMONIALS_LINK": "config.testimonials.linkSelector may be invalid or undefined"
     }
 
     var excerptTarget = document.querySelector(config.excerpts.targetSelector) || throwError(ERRORS.EXCERPT_TARGET),
@@ -44,9 +42,9 @@ function ExcerptRandomizer(config) {
         var random = Math.floor(Math.random() * (excerpts.length)),
             randomExcerpt = excerpts[random];
 
-        (random === previousExcerptIndex && excerpts.length >= 1)
-            ? getAndDisplayRandomExcerpt()
-            : render(randomExcerpt, excerptTarget);
+        (random !== previousExcerptIndex && excerpts.length > 1)
+            ? render(randomExcerpt, excerptTarget)
+            : getAndDisplayRandomExcerpt();
 
         previousExcerptIndex = random;
     }
