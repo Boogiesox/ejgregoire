@@ -1,4 +1,13 @@
+/**
+    * @function Typist - Defines an Typist constructor for displaying testimonial excerpts.
+    * @param {object} config - The instance of the Typist control being configured.
+    * @param {number} config.element - The element selector in which to apply the typist functionality.
+    * @param {string} config.delay - The time to wait before beginning the typist cycle.
+    * @param {string} config.display - The CSS display property for the typist control when rendered.
+*/
 function Typist(config) {
+  'use-strict';
+  
   var index = 0,
       elements = document.querySelectorAll(config.element),
       messageIndex = Math.floor(Math.random() * (elements.length));
