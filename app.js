@@ -11,6 +11,7 @@
         "element": ".typist",
         "delay": 1000,
         "display": "inline"
+        // "callback": function() {}
     });
     
     // Instantiate new excerptRandomizer.js control
