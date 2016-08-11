@@ -4,16 +4,21 @@
     * @param {number} config.element - The element selector in which to apply the typist functionality.
     * @param {string} config.delay - The time to wait before beginning the typist cycle.
     * @param {string} config.display - The CSS display property for the typist control when rendered.
+    * @param {number} config.callback - The function to call once the typist is complete;
 */
 function Typist(config) {
   'use-strict';
   
-  var index = 0,
-      elements = document.querySelectorAll(config.element),
-      messageIndex = Math.floor(Math.random() * (elements.length));
-      msg = elements[messageIndex].innerHTML;
+  var ERRORS = {
+      "CONTAINER_ELEMENT": "config.element may be invalid or undefined",
+      "CALLBACK_FUNCTION": "config.callback may be invalid"
+  }
   
-  prepElement(elements[messageIndex]);
+  var index = 0,
+      element = document.querySelector(config.element) || throwError(ERRORS.CONTAINER_ELEMENT),
+      msg = element.innerHTML;
+  
+  prepElement(element);
   setTimeout(pressChars, config.delay);
 
   function pressChars() {
@@ -21,11 +26,15 @@ function Typist(config) {
         msgArr = msg.split(''); 
 
     setTimeout(function() {
-      elements[messageIndex].innerHTML += msgArr[index];
+      element.innerHTML += msgArr[index];
 
       if(index < msg.length - 1) {
         index++;
         pressChars();
+      } else {
+        return (config.callback && typeof(config.callback) === 'function')
+          ? config.callback()
+          : throwError(ERRORS.CALLBACK_FUNCTION);
       }
     }, random);
   }
@@ -33,5 +42,9 @@ function Typist(config) {
   function prepElement(element) {
     element.innerHTML = '';
     element.style.display = config.display || 'inline-block';
+  }
+  
+  function throwError(errorMsg) {
+      throw new Error(errorMsg);
   }
 }

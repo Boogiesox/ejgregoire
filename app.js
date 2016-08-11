@@ -8,9 +8,9 @@
 
     // Instantiate a new typist.js control
     new Typist({
-        element: '.typist',
-        delay: 1000,
-        display: 'inline'
+        "element": ".typist",
+        "delay": 1000,
+        "display": "inline"
     });
     
     // Instantiate new excerptRandomizer.js control
