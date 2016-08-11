@@ -8,7 +8,7 @@
 
     // Instantiate a new typist.js control
     new Typist({
-        "element": ".typist",
+        "element": "header.hero .typist",
         "delay": 1000,
         "display": "inline"
         // "callback": function() {}
