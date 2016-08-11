@@ -39,14 +39,14 @@ function ExcerptRandomizer(config) {
     }
     
     function getAndDisplayRandomExcerpt() {
-        var random = Math.floor(Math.random() * (excerpts.length)),
-            randomExcerpt = excerpts[random];
+        var randomIndex = Math.floor(Math.random() * (excerpts.length)),
+            randomExcerpt = excerpts[randomIndex];
 
-        (random !== previousExcerptIndex && excerpts.length > 1)
+        (randomIndex !== previousExcerptIndex && excerpts.length > 1)
             ? render(randomExcerpt, excerptTarget)
             : getAndDisplayRandomExcerpt();
 
-        previousExcerptIndex = random;
+        previousExcerptIndex = randomIndex;
     }
     
     function clearHighlights() {
@@ -55,10 +55,14 @@ function ExcerptRandomizer(config) {
         });
     }
     
+    function addHighlight(testimonial) {
+        testimonial.classList.add(config.testimonials.highlightClass);
+    }
+    
     function render(excerpt, el) {
         if(config.testimonials.highlightClass) {
             clearHighlights();
-            excerpt.closest(config.testimonials.elementSelector).classList.add(config.testimonials.highlightClass);
+            addHighlight(excerpt.closest(config.testimonials.elementSelector));
         }
 
         el.innerHTML = '"' + excerpt.innerHTML + '"';
