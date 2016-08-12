@@ -6,6 +6,7 @@
     * @param {string} config.excerpts.targetSelector - The selector pattern for where to display the excerpts.
     * @param {string} config.testimonials.elementSelector - The selector pattern for testimonial elements.
     * @param {string} config.testimonials.highlightClass - The class name to append to the testimonial-associated-with-the-excerpt's link.
+    * @param {string} config.testimonials.testimonialBody - The selector pattern for testimonial body element.
 */
 function ExcerptRandomizer(config) {
     'use-strict';
@@ -45,6 +46,12 @@ function ExcerptRandomizer(config) {
         (randomIndex !== previousExcerptIndex && excerpts.length > 1)
             ? render(randomExcerpt, excerptTarget)
             : getAndDisplayRandomExcerpt();
+            
+        testimonials.forEach(function(testimonial) {
+            testimonial.onclick = function(e) {
+                handleTestimonialClick(e, testimonial);
+            }
+        });
 
         previousExcerptIndex = randomIndex;
     }
@@ -57,6 +64,17 @@ function ExcerptRandomizer(config) {
     
     function addHighlight(testimonial) {
         testimonial.classList.add(config.testimonials.highlightClass);
+    }
+    
+    function handleTestimonialClick(e, testimonial) {
+        console.log(e);
+        var testimonialBody = testimonial.querySelector(config.testimonials.testimonialBody);
+        
+        //testimonialBody.style.top = e.clientY + 'px';
+        
+        (testimonialBody.classList.contains('show'))
+            ? testimonialBody.classList.remove('show')
+            : testimonialBody.classList.add('show');
     }
     
     function render(excerpt, el) {

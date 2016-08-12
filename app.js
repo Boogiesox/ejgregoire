@@ -16,14 +16,15 @@
     
     // Instantiate new excerptRandomizer.js control
     new ExcerptRandomizer({
-        "interval": 1000,
+        "interval": 5000,
         "excerpts": {
             "attribute": "excerpt",
             "targetSelector": ".testimonial-excerpt"
         },
         "testimonials": {
             "elementSelector": ".testimonial",
-            "highlightClass": "highlight"
+            "highlightClass": "highlight",
+            "testimonialBody": ".testimonial-body"
         }
     });
 })();

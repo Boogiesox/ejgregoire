@@ -31,11 +31,14 @@ function Typist(config) {
       if(index < msg.length - 1) {
         index++;
         pressChars();
-      } else {
-        return (config.callback && typeof(config.callback) === 'function')
-          ? config.callback()
-          : throwError(ERRORS.CALLBACK_FUNCTION);
       }
+      
+      if(config.callback) {
+        (config.callback && typeof(config.callback) === 'function')
+            ? config.callback()
+            : throwError(ERRORS.CALLBACK_FUNCTION);
+      }
+
     }, random);
   }
 
