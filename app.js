@@ -24,7 +24,8 @@
         "testimonials": {
             "elementSelector": ".testimonial",
             "highlightClass": "highlight",
-            "testimonialBody": ".testimonial-body"
+            "testimonialBody": ".testimonial-body",
+            "testimonialClose": ".testimonial-close"
         }
     });
 })();

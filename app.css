@@ -191,8 +191,7 @@ section.testimonials {
     }
     section .testimonial-body {
         z-index: 10;
-        background: rgba(255, 255, 255, 0.98);
-        padding: 2em;
+        background: #fff;
         height: 100%;
         width: 100%;
         position: fixed;
@@ -209,6 +208,12 @@ section.testimonials {
         border-radius: 0;
         opacity: 1;
         transform: scale3d(1,1,1);
+    }
+    section .testimonial-actions {
+        padding: 1em 0;
+    }
+    section .testimonial-close {
+        font-weight: bolder;
     }
     section .testimonial-excerpt {
         padding: 1em 0;

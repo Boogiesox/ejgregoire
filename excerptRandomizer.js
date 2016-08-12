@@ -7,6 +7,7 @@
     * @param {string} config.testimonials.elementSelector - The selector pattern for testimonial elements.
     * @param {string} config.testimonials.highlightClass - The class name to append to the testimonial-associated-with-the-excerpt's link.
     * @param {string} config.testimonials.testimonialBody - The selector pattern for testimonial body element.
+    * @param {string} config.testimonials.testimonialClose - The selector pattern for testimonial close element.
 */
 function ExcerptRandomizer(config) {
     'use-strict';
@@ -16,6 +17,7 @@ function ExcerptRandomizer(config) {
         "EXCERPT_ATTRIBUTE": "config.excerpts.attribute may be invalid or undefined",
         "INTERVAL_NAN": "config.interval must be an integer, 0, or not defined",
         "TESTIMONIALS_ELEMENT": "config.testimonials.elementSelector may be invalid or undefined",
+        "TESTIMONIALS_CLOSE": "config.testimonials.testimonialClose may be invalid or undefined"
     }
 
     var excerptTarget = document.querySelector(config.excerpts.targetSelector) || throwError(ERRORS.EXCERPT_TARGET),
@@ -48,7 +50,10 @@ function ExcerptRandomizer(config) {
             : getAndDisplayRandomExcerpt();
             
         testimonials.forEach(function(testimonial) {
-            testimonial.onclick = function(e) {
+            testimonial.querySelector("div:not(" + config.testimonials.testimonialBody + ")").onclick = function(e) {
+                handleTestimonialClick(e, testimonial);
+            }
+            testimonial.querySelector(config.testimonials.testimonialClose).onclick = function(e) {
                 handleTestimonialClick(e, testimonial);
             }
         });
