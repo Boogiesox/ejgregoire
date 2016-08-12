@@ -67,14 +67,15 @@ function ExcerptRandomizer(config) {
     }
     
     function handleTestimonialClick(e, testimonial) {
-        console.log(e);
         var testimonialBody = testimonial.querySelector(config.testimonials.testimonialBody);
-        
-        //testimonialBody.style.top = e.clientY + 'px';
         
         (testimonialBody.classList.contains('show'))
             ? testimonialBody.classList.remove('show')
             : testimonialBody.classList.add('show');
+            
+        (document.body.classList.contains('show-testimonial'))
+            ? document.body.classList.remove('show-testimonial')
+            : document.body.classList.add('show-testimonial');
     }
     
     function render(excerpt, el) {
