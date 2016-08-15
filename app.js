@@ -25,6 +25,7 @@
             "elementSelector": ".testimonial",
             "highlightClass": "highlight",
             "testimonialBody": ".testimonial-body",
+            "testimonialBodyDisplay": "show",
             "testimonialClose": ".testimonial-close"
         }
     });

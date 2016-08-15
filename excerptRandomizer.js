@@ -6,6 +6,7 @@
     * @param {string} config.excerpts.targetSelector - The selector pattern for where to display the excerpts.
     * @param {string} config.testimonials.elementSelector - The selector pattern for testimonial elements.
     * @param {string} config.testimonials.highlightClass - The class name to append to the testimonial-associated-with-the-excerpt's link.
+    * @param {string} config.testimonials.testimonialBodyDIsplay - The class used to display the testimonial body.
     * @param {string} config.testimonials.testimonialBody - The selector pattern for testimonial body element.
     * @param {string} config.testimonials.testimonialClose - The selector pattern for testimonial close element.
 */
@@ -74,9 +75,9 @@ function ExcerptRandomizer(config) {
     function handleTestimonialClick(e, testimonial) {
         var testimonialBody = testimonial.querySelector(config.testimonials.testimonialBody);
         
-        (testimonialBody.classList.contains('show'))
-            ? testimonialBody.classList.remove('show')
-            : testimonialBody.classList.add('show');
+        (testimonialBody.classList.contains(config.testimonials.testimonialBodyDisplay))
+            ? testimonialBody.classList.remove(config.testimonials.testimonialBodyDisplay)
+            : testimonialBody.classList.add(config.testimonials.testimonialBodyDisplay);
             
         (document.body.classList.contains('show-testimonial'))
             ? document.body.classList.remove('show-testimonial')
