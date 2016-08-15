@@ -196,7 +196,6 @@ section.testimonials {
         width: 100%;
         position: fixed;
         overflow-y: auto;
-        opacity: 0;
         transform: scale3d(0,0,0);
         transition: all 0.5s cubic-bezier(0,.62,.5,1);
     }
@@ -206,7 +205,6 @@ section.testimonials {
         right: 0;
         margin: 0 auto;
         border-radius: 0;
-        opacity: 1;
         transform: scale3d(1,1,1);
     }
     section .testimonial-actions {
