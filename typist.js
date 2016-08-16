@@ -15,10 +15,12 @@ function Typist(config) {
   }
   
   var index = 0,
-      element = document.querySelector(config.element) || throwError(ERRORS.CONTAINER_ELEMENT),
-      msg = element.innerHTML;
+      randomIndex = Math.R
+      elements = document.querySelectorAll(config.element),
+      messageIndex = Math.floor(Math.random() * (elements.length));
+      msg = elements[messageIndex].innerHTML;
   
-  prepElement(element);
+  prepElement(elements[messageIndex]);
   setTimeout(pressChars, config.delay);
 
   function pressChars() {
@@ -26,7 +28,7 @@ function Typist(config) {
         msgArr = msg.split(''); 
 
     setTimeout(function() {
-      element.innerHTML += msgArr[index];
+      elements[messageIndex].innerHTML += msgArr[index];
 
       if(index < msg.length - 1) {
         index++;
