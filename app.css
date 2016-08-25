@@ -1,17 +1,3 @@
-/* GLOBAL OVERRIDES */
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgba(255,255,255,0.50);
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: rgba(255,255,255,0.50);
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: rgba(255,255,255,0.50);
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: rgba(255,255,255,0.50);
-}
-
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -195,9 +181,10 @@ section.testimonials {
         height: 100%;
         width: 100%;
         position: fixed;
-        overflow-y: auto;
         transform: scale3d(0,0,0);
         transition: all 0.5s cubic-bezier(0,.62,.5,1);
+        font-size: 1.2em;
+        overflow-y: auto;
     }
     section .testimonial-body.show {
         top: 0;
@@ -206,6 +193,9 @@ section.testimonials {
         margin: 0 auto;
         border-radius: 0;
         transform: scale3d(1,1,1);
+    }
+    section .testimonial-copy {
+        font-family: 'Source Serif Pro', serif;
     }
     section .testimonial-actions {
         padding: 1em 0;
@@ -267,12 +257,7 @@ form.contact-me {
     form.contact-me fieldset {
         border: none;
     }
-    form.contact-me input[type="text"],
-    form.contact-me input[type="tel"],
-    form.contact-me input[type="email"],
-    form.contact-me input[type="number"],
-    form.contact-me textarea,
-    form.contact-me select {
+    form.contact-me .input {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -287,11 +272,30 @@ form.contact-me {
         outline: none;
         font-size: 1.2em;
         margin-bottom: 0.5em;
+        resize: none;
         border-bottom: 2px solid transparent;
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 5.5rem;
         background: rgba(255,255,255,0.15);
         color: #fff;
         transition: border 1s cubic-bezier(0,.62,.5,1);
+        background-size: 1.75em auto;
+        background-position: left 0.66em top 0.55em;
+        background-repeat: no-repeat;
+    }
+    form.contact-me .input.name {
+        background-image: url('nametag.png');
+    }
+    form.contact-me .input.company {
+        background-image: url('company.png');
+    }
+    form.contact-me .input.email {
+        background-image: url('email.png');
+    }
+    form.contact-me .input.phone {
+        background-image: url('phone.png');
+    }
+    form.contact-me .input.comments {
+        background-image: url('comments.png');
     }
     form.contact-me input[type="submit"],
     form.contact-me input[type="reset"] {
@@ -310,19 +314,27 @@ form.contact-me {
     form.contact-me input[type="reset"]:hover {
         border-bottom: 2px solid #fff;
     }
-    form.contact-me input:focus {
+    form.contact-me .input:focus {
         border: none;
         border-bottom: 2px solid #fff;
     }
-    form.contact-me textarea {
-        border: none;
-        resize: none;
+    form.contact-me textarea.input {
         height: 10em;
-        border: 2px solid transparent;
     }
-    form.contact-me textarea:focus {
-        border-bottom: 2px solid #fff;
+
+    form.contact-me .input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: rgba(255,255,255,0.50);
     }
+    form.contact-me .input::-moz-placeholder { /* Firefox 19+ */
+        color: rgba(255,255,255,0.50);
+    }
+    form.contact-me .input:-ms-input-placeholder { /* IE 10+ */
+        color: rgba(255,255,255,0.50);
+    }
+    form.contact-me .input:-moz-placeholder { /* Firefox 18- */
+        color: rgba(255,255,255,0.50);
+    }
+    
     
 /* FOOTER STYLES */
 footer.main {
