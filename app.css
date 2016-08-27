@@ -154,10 +154,14 @@ nav.main {
 /* TESTIMONIALS SECTION STYLES */
 section.testimonials {
     padding: 0 4em 4em 4em;
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
 }
     section .testimonial img {
+        max-width: 200px;
+        width: 100%;
+        margin: 0 auto;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         transition: all 1s cubic-bezier(0,.62,.5,1);
@@ -192,6 +196,7 @@ section.testimonials {
         right: 0;
         margin: 0 auto;
         border-radius: 0;
+        text-align: left;
         transform: scale3d(1,1,1);
     }
     section .testimonial-copy {
