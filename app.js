@@ -5,6 +5,15 @@
     window.onload = function() {
         document.querySelector('body').className = "";
     };
+    
+    window.onscroll = function(e) {
+        console.log(window.scrollY);
+        if(window.scrollY > 300) {
+            document.querySelector('nav.main').classList.add('attached');
+        } else {
+            document.querySelector('nav.main').classList.remove('attached');
+        }
+    };
 
     // Instantiate a new typist.js control
     new Typist({
