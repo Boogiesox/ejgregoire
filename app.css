@@ -107,7 +107,7 @@ nav.main {
             width: 17.5%;
             height: 100%;
             text-align: center;
-            color: #019875;
+            color: teal;
             background-color: rgba(255,255,255,0.85);
             transition: all 0.5s cubic-bezier(0,.62,.5,1);
         }
@@ -248,7 +248,7 @@ section.testimonials {
 /* CONTACT SECTION STYLES */
 section.contact {
     margin-top: 156px;
-    background-color: #019875;
+    background-color: teal;
     color: #fff;
     padding: 10em 0 10em 0;
     background-image: url(tin-cans.svg);
@@ -267,9 +267,9 @@ section.contact {
         left: 0;
         right: 0;
         border-radius: 50%;
-        background-color: #019875;
+        background-color: teal;
         border: 2px solid #fff;
-        box-shadow: 0 0 0px 20px #019875;
+        box-shadow: 0 0 0px 20px teal;
         height: 156px;
         width: 156px;
     }
