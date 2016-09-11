@@ -15,7 +15,6 @@ function Typist(config) {
   }
   
   var index = 0,
-      randomIndex = Math.R
       elements = document.querySelectorAll(config.element),
       messageIndex = Math.floor(Math.random() * (elements.length));
       msg = elements[messageIndex].innerHTML;
@@ -25,7 +24,7 @@ function Typist(config) {
 
   function pressChars() {
     var random = Math.random() * 200,
-        msgArr = msg.split(''); 
+        msgArr = msg.split('');
 
     setTimeout(function() {
       elements[messageIndex].innerHTML += msgArr[index];
